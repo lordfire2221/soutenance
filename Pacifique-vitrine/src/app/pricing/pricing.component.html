@@ -1,0 +1,135 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+  
+      <h1 class="logo me-auto"><a href="/home">PACIFIQUE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a class="active" routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+  
+      <a routerLink="/pricing" class="get-started-btn">Commencer</a>
+  
+    </div>
+    <div *ngIf="visible">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-mobile">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a class="active" routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi mobile-nav-toggle bi-x" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+    </div>
+    
+  
+  </header><!-- End Header -->
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+            <h2>Tarifs</h2>
+            <p>Vous avez la possibilité de sélectionner un type de formation associé à votre disponibilité. </p>
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="box featured">
+                        <h3>Formation Normale</h3>
+                        <h4><sup>XOF</sup>105 000<span> / 2 mois</span></h4>
+                        <ul>
+                            <li>Cours théoriques</li>
+                            <li>Cours de crénneau</li>
+                            <li>Application Android/IOS</li>
+                            <li class="na">1 mois de formation</li>
+                            <li>2 mois de formation</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a routerLink="/informations" class="btn-buy">Inscription</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="box featured">
+                        <h3>Formation Accélérée</h3>
+                        <h4><sup>XOF</sup>115 000<span> / mois</span></h4>
+                        <ul>
+                            <li>Cours théoriques</li>
+                            <li>Cours de crénneau</li>
+                            <li>Application Android/IOS</li>
+                            <li class="na">2 mois de formation</li>
+                            <li>1 mois de formation</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a routerLink="/informations" class="btn-buy">Inscription</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span class="advanced">Etrangers</span>
+                        <h3>Formation Normale</h3>
+                        <h4><sup>XOF</sup>125 000<span> / 2 mois</span></h4>
+                        <ul>
+                            <li>Cours théoriques</li>
+                            <li>Cours de crénneau</li>
+                            <li>Application Android/IOS</li>
+                            <li class="na">1 mois de formation</li>
+                            <li>2 mois de formation</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a routerLink="/informations" class="btn-buy">Inscription</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span class="advanced">Etrangers</span>
+                        <h3>Formation Accélérée</h3>
+                        <h4><sup>XOF</sup>135 000<span> / mois</span></h4>
+                        <ul>
+                            <li>Cours théoriques</li>
+                            <li>Cours de crénneau</li>
+                            <li>Application Android/IOS</li>
+                            <li class="na">2 mois de formation</li>
+                            <li>1 mois de formation</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a routerLink="/informations" class="btn-buy">Inscription</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Pricing Section -->
+
+</main><!-- End #main -->
+
+<app-footer></app-footer>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>

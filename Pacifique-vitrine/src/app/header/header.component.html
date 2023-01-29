@@ -1,0 +1,39 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/home">PACIFIQUE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active" routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+
+      <a routerLink="/pricing" class="get-started-btn">Commencer</a>
+
+    </div>
+    <div *ngIf="visible">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-mobile">
+        <ul>
+          <li><a class="active" routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi mobile-nav-toggle bi-x" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+    </div>
+    
+
+  </header><!-- End Header -->

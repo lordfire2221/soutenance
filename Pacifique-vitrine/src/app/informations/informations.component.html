@@ -1,0 +1,80 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="/home">PACIFIQUE</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a routerLink="/home">Accueil</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/pricing">Tarifs</a></li>
+
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a class="active" routerLink="/informations">Documents Importants</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" (click)="dNone()"></i>
+    </nav><!-- .navbar -->
+
+    <a routerLink="/pricing" class="get-started-btn">Commencer</a>
+
+  </div>
+  <div *ngIf="visible">
+    <nav id="navbar" class="navbar order-last order-lg-0 navbar-mobile">
+      <ul>
+        <li><a routerLink="/home">Accueil</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/pricing">Tarifs</a></li>
+
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a class="active" routerLink="/informations">Documents Importants</a></li>
+      </ul>
+      <i class="bi mobile-nav-toggle bi-x" (click)="dNone()"></i>
+    </nav><!-- .navbar -->
+  </div>
+
+
+</header><!-- End Header -->
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+      <h2>Documments nécessaires</h2>
+      <p>Documents à fournir auprès de l'auto-ecole pour votre inscription. </p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <ul>
+            <li><i class="bi bi-check-circle"></i> 1 photocopie du certificat d'Identification Personnelle
+              pour les nationaux.</li>
+            <li><i class="bi bi-check-circle"></i> 1 photocopie du certificat d'Identification Personnelle
+              du Résident pour les étrangers.</li>
+            <li><i class="bi bi-check-circle"></i> 1 Attestation ou certificat de Résidence ou autre
+              justificatif de résidence.</li>
+            <li><i class="bi bi-check-circle"></i> Visite et contre visite.</li>
+            <li><i class="bi bi-check-circle"></i> 1 Test de groupe sanguin(Groupe sanguin).</li>
+            <li><i class="bi bi-check-circle"></i> 4 photos d'identité (Format 3,5x4,5cm; Vue de face sur
+              fond blanc).</li>
+            <li><i class="bi bi-check-circle"></i> 1 photocopie de l'acte de mariage pour les femmes mariées
+              qui souhaiteraient avoir le nom du mari sur leur carte de permis de conduire.</li>
+            <li><i class="bi bi-check-circle"></i> 1 photocopie légalisée de certificat de porte verre.</li>
+            <li><i class="bi bi-check-circle"></i> 1 photocopie légalisée de certificat d'aptitude'.</li>
+          </ul>
+        </div>
+      </div>
+      <button class="get-started-btn" routerLink="/payment">Payez la totalité ou une avance des frais en ligne pour réserver votre place.</button>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+<app-footer></app-footer>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>

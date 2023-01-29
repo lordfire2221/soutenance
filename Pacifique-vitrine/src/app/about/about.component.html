@@ -1,0 +1,133 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/home">PACIFIQUE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a class="active" routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+
+      <a routerLink="/pricing" class="get-started-btn">Commencer</a>
+
+    </div>
+    <div *ngIf="visible">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-mobile">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a class="active" routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi mobile-nav-toggle bi-x" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+    </div>
+    
+
+  </header><!-- End Header -->
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+            <h2>A Propos</h2>
+            <p>Découvrez pourquoi vous ne regretterez pas de nous faire confiance. </p>
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>Depuis plus de 30 ans, l’auto-école pacifique met son savoir-faire et son dynamisme au profit de
+                        la population béninoise et étrangère pour la maitrise du code de la route, de la conduite et de
+                        la sécurité routière.</h3>
+                    <p class="fst-italic">
+
+                        Avec un taux de réussite qui varie entre 90% et 95% elle occupe une place de choix parmi les
+                        meilleures auto-écoles de Bénin et de l’Afrique.
+                        Par notre stratégie de rigueur et de douceur, nous permettons à nos clients d’obtenir divers
+                        permis de conduire. Nous formons pour :
+
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> Les permis A1, A2 et A3 (motos).</li>
+                        <li><i class="bi bi-check-circle"></i> Le permis B (voitures de 5 places et les petites
+                            fourgonnettes).</li>
+                        <li><i class="bi bi-check-circle"></i> Les permis C et C1 (les camions).</li>
+                        <li><i class="bi bi-check-circle"></i> Les permis DR et D (les minibus et les bus).</li>
+                    </ul>
+                    <div class="col-lg-12 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                        <img src="https://www.goafricaonline.com/uploads/media/company_media/0002/45/60f159f641c48-conduite-auto-ecole-pacifique-benin.jpg"
+                            class="img-fluid" alt="">
+                    </div>
+                    <p class="fst-italic">
+                        L’auto-école met à la disposition de ses apprenants un cadre convivial permettant l’assimilation
+                        des cours et différentes sortes d’outils pédagogiques (brochures, livres, projections
+                        d’exercices sur écran) afin de les aider à atteindre leur objectif de réussite.
+                        Nous accompagnons les entreprises en donnant des cours de recyclages de code à leurs
+                        conducteurs. Pour la maitrise de la conduite, nous faisons également le recyclage de toute
+                        personne ayant déjà son permis.
+                        Doté d’une personnel de qualité et jusqu’à quatre voitures de formation, nous arrivons à couvrir
+                        les demandes de la clientèle.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+        <div class="container">
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1"
+                        class="purecounter">{{counter}}</span>
+                    <p>Etudiants</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
+                        class="purecounter">{{counter1}}</span>
+                    <p>Permis délivrés</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1"
+                        class="purecounter">{{counter2}}</span>
+                    <p>Types de Permis</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                        class="purecounter">{{counter3}}</span>
+                    <p>Coachs</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+<app-footer></app-footer>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>

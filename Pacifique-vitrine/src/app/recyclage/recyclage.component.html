@@ -1,0 +1,73 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+  
+      <h1 class="logo me-auto"><a href="/home">PACIFIQUE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a class="active" routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+  
+      <a routerLink="/pricing" class="get-started-btn">Commencer</a>
+  
+    </div>
+    <div *ngIf="visible">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-mobile">
+        <ul>
+          <li><a routerLink="/home">Accueil</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/pricing">Tarifs</a></li>
+  
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a class="active" routerLink="/informations">Documents Importants</a></li>
+        </ul>
+        <i class="bi mobile-nav-toggle bi-x" (click)="dNone()"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+            <h2>Cours de récyclage/Poids Lourds</h2>
+            <p>Tarifs des cours de récyclages et des Poids Lourds. </p>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> 10 cours de récyclage: 35 000.</li>
+                        <li><i class="bi bi-check-circle"></i> 12 cours de récyclage: 40 000.</li>
+                        <li><i class="bi bi-check-circle"></i> 15 cours de récyclage: 45 000.</li>
+                        <li><i class="bi bi-check-circle"></i> 20 cours de récyclage: 53 000.</li>
+                        <li><i class="bi bi-check-circle"></i> Poids lourds: 120 000.</li>
+                    </ul>
+                    <h3>Poids Lourds.</h3>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> Cours théorique: 60 000.</li>
+                        <li><i class="bi bi-check-circle"></i> DTCR: 60 000.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+<app-footer></app-footer>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
