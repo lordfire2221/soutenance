@@ -1,0 +1,14 @@
+<div
+  #toastElement
+  class="toast fade toast-width mt-2"
+  [ngClass]="type"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  style="width: max-content">
+  <div class="toast-header" style="display: flex;justify-content: space-between !important;">
+    <strong class="me-auto">{{ title }}</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="hide()" ><i class="fa fa-times"></i></button>
+  </div>
+  <div class="toast-body" class="text-white" style="padding:1vw">{{ message }}</div>
+</div>

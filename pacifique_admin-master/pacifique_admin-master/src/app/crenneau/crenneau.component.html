@@ -1,0 +1,161 @@
+<app-spinner></app-spinner>
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <app-sidebar></app-sidebar>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <app-navbar (toggle)="sidebarVisible = !sidebarVisible"></app-navbar>
+
+            <!-- Begin Page Content -->
+            <div class="container-flapprenant">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Cours de Crenneau</h1>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Programme de cours pour le créneau.</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                *ngIf="isShow==true">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Jour</th>
+                                        <th>Nombre de tours</th>
+                                        <th>Heure</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Jour</th>
+                                        <th>Nombre de tours</th>
+                                        <th>Heure</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr *ngFor="let data of datas;let id=index">
+                                        <td>{{data.apprenant.nom}}</td>
+                                        <td>
+                                            {{jours[data.jour]}}
+                                        </td>
+                                        <td>
+                                            {{data.tours}}
+                                        </td>
+                                        <td>
+                                            {{data.heure}}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" type="button" data-toggle="modal"
+                                                data-target="#formModal" (click)="select(data.apprenant,data._id)">
+                                                Modifier
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Modale contenant le formulaire -->
+                        <div class="modal fade" id="formModal" tabindex="-1" role="dialog"
+                            aria-labelledby="formModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="formModalLabel">{{name}}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Formulaire -->
+                                        <form [formGroup]="modifierProgramme" (ngSubmit)="onSubmit()">
+                                            <!-- Deuxième liste déroulante -->
+                                            <div class="form-group">
+                                                <label for="secondSelect">Jour choisis:</label>
+                                                <select class="form-control" id="secondSelect" formControlName="jour" (change)="getDispo(modifierProgramme.value.apprenant,modifierProgramme.value.jour)">
+                                                    <option *ngFor="let jour of jours; let id=index" value="{{id}}">{{jour}}</option>
+                                                </select>
+                                            </div>
+                                            <!-- Première liste déroulante -->
+                                            <div class="form-group">
+                                                <label for="firstSelect">Heure de cours:</label>
+                                                <select class="form-control" id="firstSelect" formControlName="heure">
+                                                    <option *ngFor="let heure of heures;let id=index" value="{{heure}}">{{heure}}</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="firstSelect">Nombre de tours:</label>
+                                                <select class="form-control" id="firstSelect" formControlName="tours">
+                                                    <option value="1">
+                                                        1tour</option>
+                                                    <option value="2">
+                                                        2tours</option>
+                                                </select>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fermer</button>
+                                        <button type="submit" class="btn btn-primary" (click)="onSubmit()" data-dismiss="modal">Soumettre</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-flapprenant -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" routerLink="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Teminé pour Aujourd'hui?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Sélectionnez déconnexion si vous êtes prêts à quiter le site.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary"  data-dismiss="modal"(click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

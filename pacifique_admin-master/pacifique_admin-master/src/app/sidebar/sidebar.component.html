@@ -1,0 +1,192 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/apprenants">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <img src="" alt="">
+        </div>
+        <div class="sidebar-brand-text mx-3">Espace Admin</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" *ngIf="datas.role == 'superadmin'">
+        <a class="nav-link collap sed" href="#" data-toggle="collapse" data-target="#collapseAdm" aria-expanded="true"
+            aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Comptes AD </span>
+        </a>
+        <div id="collapseAdm" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Les Administrateurs:</h6>
+                <a class="collapse-item" routerLink="/admin/ajouter" >Ajouter</a>
+                <a class="collapse-item" routerLink="/admin">Liste</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collap sed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Les comptes Apprenants</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Les Apprenants:</h6>
+                <a class="collapse-item" routerLink="/apprenants/ajouter" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur'">Ajouter</a>
+                <a class="collapse-item" routerLink="/apprenants">Liste</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur'|| datas.role == 'superadmin'">
+        <a class="nav-link collap sed" href="#" data-toggle="collapse" data-target="#collapseThre" aria-expanded="true"
+            aria-controls="collapseThre">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Programme de Conduite</span>
+        </a>
+        <div id="collapseThre" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Programme de Conduite:</h6>
+                <a class="collapse-item" routerLink="/conduite/edit">Créer</a>
+                <a class="collapse-item" routerLink="/conduite">Programme</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item" *ngIf="datas.role == 'superadmin'|| datas.role == 'moniteur' || datas.role == 'secretaire' || datas.role == 'directeur'" >
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefiv" aria-expanded="true"
+            aria-controls="collapsefive">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Cours</span>
+        </a>
+        <div id="collapsefiv" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des Cours:</h6>
+                <a class="collapse-item" routerLink="/cours/ajouter" *ngIf="datas.role == 'superadmin'">Ajouter</a>
+                <a class="collapse-item" routerLink="/cours">Liste/Modifier</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur' || datas.role == 'superadmin'">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true"
+            aria-controls="collapsefive">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Programme de Crenneau</span>
+        </a>
+        <div id="collapsefive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Programme de Crenneau:</h6>
+                <a class="collapse-item" routerLink="/crenneau/edit">Editer</a>
+                <a class="collapse-item" routerLink="/crenneau">Programme</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item" *ngIf="datas.role == 'superadmin' ||datas.role == 'secretaire' || datas.role == 'directeur'|| datas.role == 'moniteur'">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefie" aria-expanded="true"
+            aria-controls="collapsefie">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Programme Moniteurs</span>
+        </a>
+        <div id="collapsefie" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Programme des Moniteurs:</h6>
+                <a class="collapse-item" routerLink="/moniteur/edit" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur'|| datas.role == 'superadmin'">Editer</a>
+                <a class="collapse-item" routerLink="/moniteur">Programme</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur'">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsepre" aria-expanded="true"
+            aria-controls="collapsepre">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Présences au cours</span>
+        </a>
+        <div id="collapsepre" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gérer la présence:</h6>
+                <a class="collapse-item" routerLink="/presence/edit">Valider</a>
+                <a class="collapse-item" routerLink="/presence">Liste des Présents</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- <li class="nav-item" *ngIf="datas.role == 'superadmin'">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true"
+            aria-controls="collapsefour">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Gestion Application</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des logins:</h6>
+                <a class="collapse-item" routerLink="/gestion">Activer</a>
+                <a class="collapse-item" routerLink="/desactiver">Désactiver</a>
+            </div>
+        </div>
+    </li> -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesix" aria-expanded="true"
+            aria-controls="collapsesix">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Les Exercices</span>
+        </a>
+        <div id="collapsesix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des Exercices:</h6>
+                <a class="collapse-item" routerLink="/exercices/ajouter" *ngIf="datas.role == 'superadmin'">Ajouter</a>
+                <a class="collapse-item" routerLink="/exercices">Liste/Modifier</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseeight" aria-expanded="true"
+            aria-controls="collapseeight">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Les Révisions</span>
+        </a>
+        <div id="collapseeight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des Révisions:</h6>
+                <a class="collapse-item" routerLink="/revisions/ajouter" *ngIf="datas.role == 'superadmin'">Ajouter</a>
+                <a class="collapse-item" routerLink="/revisions">Liste/Modifier</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <!-- <li class="nav-item" *ngIf="datas.role == 'secretaire' || datas.role == 'directeur'">
+        <a class="nav-link" routerLink="/messages">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Messages</span></a>
+    </li> -->
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item" *ngIf="datas.role == 'moniteur' || datas.role == 'secretaire' || datas.role == 'directeur'">
+        <a class="nav-link" routerLink="/notes">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Notes</span></a>
+    </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item" *ngIf="datas.role == 'superadmin'">
+        <a class="nav-link" routerLink="/upload">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Upload Images</span></a>
+    </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item" *ngIf="datas.role == 'superadmin'">
+        <a class="nav-link" routerLink="/signalisation">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Signalisations</span></a>
+    </li>
+
+    <hr class="sidebar-divider">
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
+<!-- End of Sidebar -->

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "pacifique-86242"
+  },
+  "targets": {
+    "pacifique-86242": {
+      "hosting": {
+        "admin": [
+          "admin-pacifique"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

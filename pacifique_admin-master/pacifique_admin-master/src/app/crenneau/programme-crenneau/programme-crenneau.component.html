@@ -1,0 +1,167 @@
+<app-spinner></app-spinner>
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <app-sidebar></app-sidebar>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <app-navbar (toggle)="sidebarVisible = !sidebarVisible"></app-navbar>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Programme de Crénneau</h1>
+                    <a style="cursor:pointer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" (click)="validate()"><i
+                            class="fas fa-download fa-sm text-white-50"></i>Validez les modifications</a>
+                </div>
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Sélectionnez les heures libres pour chaque
+                            apprenant</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive" *ngIf="day===3 || day===4|| day===5|| day===6">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                *ngIf="isShow==true">
+                                <thead>
+                                    <tr>
+                                        <th>Apprenant</th>
+                                        <!-- <th>Nombre d'heure</th> -->
+                                        <th>Type de cours</th>
+                                        <th>Lundi</th>
+                                        <th>Mardi</th>
+                                        <th>Mercredi</th>
+                                        <th>Jeudi</th>
+                                        <th>Vendredi</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Apprenant</th>
+                                        <!-- <th>Nombre d'heure</th> -->
+                                        <th>Type de cours</th>
+                                        <th>Lundi</th>
+                                        <th>Mardi</th>
+                                        <th>Mercredi</th>
+                                        <th>Jeudi</th>
+                                        <th>Vendredi</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr *ngFor="let data of datas;let id=index">
+                                        <td>{{data.apprenant.nom}}</td>
+                                        <td>{{data.apprenant.cours}}</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" id="myCheckbox1"
+                                                    (change)="select(0,decompose(data.disponibilite[0],1),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[0],1)}}
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" id="myCheckbox2"
+                                                    (change)="select(0,decompose(data.disponibilite[0],3),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[0],3)}}
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" id="myCheckbox1"
+                                                    (change)="select(1,decompose(data.disponibilite[1],1),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[1],1)}}
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" id="myCheckbox2"
+                                                    (change)="select(1,decompose(data.disponibilite[1],3),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[1],3)}}
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox1"
+                                                    (change)="select(2,decompose(data.disponibilite[2],1),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[2],1)}}
+                                            </label>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox2"
+                                                    (change)="select(2,decompose(data.disponibilite[2],3),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[2],3)}}
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox1"
+                                                    (change)="select(3,decompose(data.disponibilite[3],1),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[3],1)}}
+                                            </label>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox2"
+                                                    (change)="select(3,decompose(data.disponibilite[3],3),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[3],3)}}
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox1"
+                                                    (change)="select(4,decompose(data.disponibilite[4],1),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[4],1)}}
+                                            </label>
+                                            <label >
+                                                <input type="checkbox" id="myCheckbox2"
+                                                    (change)="select(4,decompose(data.disponibilite[4],3),data.apprenant,$event)">
+                                                {{decompose(data.disponibilite[4],3)}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" routerLink="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Teminé pour Aujourd'hui?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Sélectionnez déconnexion si vous êtes prêts à quiter le site.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary"  data-dismiss="modal"(click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

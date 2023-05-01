@@ -1,0 +1,56 @@
+[debug] [2023-02-11T18:46:31.040Z] ----------------------------------------------------------------------
+[debug] [2023-02-11T18:46:31.042Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tchibozo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-11T18:46:31.043Z] CLI Version:   11.16.0
+[debug] [2023-02-11T18:46:31.043Z] Platform:      win32
+[debug] [2023-02-11T18:46:31.043Z] Node Version:  v18.12.1
+[debug] [2023-02-11T18:46:31.044Z] Time:          Sat Feb 11 2023 19:46:31 GMT+0100 (heure normale d’Afrique de l’Ouest)
+[debug] [2023-02-11T18:46:31.044Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-11T18:46:31.048Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-02-11T18:46:31.182Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-11T18:46:31.182Z] > authorizing via signed-in user (pacifiqueautoecole1@gmail.com)
+[debug] [2023-02-11T18:46:31.183Z] [iam] checking project pacifique-86242 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-11T18:46:31.184Z] > refreshing access token with scopes: []
+[debug] [2023-02-11T18:46:31.186Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-11T18:46:31.186Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-11T18:46:34.455Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-02-11T18:46:34.456Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-02-11T18:46:34.519Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-11T18:46:34.520Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-11T18:46:34.535Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions [none]
+[debug] [2023-02-11T18:46:34.535Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions x-goog-quota-user=projects/pacifique-86242
+[debug] [2023-02-11T18:46:34.536Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-11T18:46:41.179Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions 200
+[debug] [2023-02-11T18:46:41.180Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-11T18:46:41.184Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pacifique-86242 [none]
+[debug] [2023-02-11T18:47:11.199Z] Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/pacifique-86242
+[debug] [2023-02-11T18:47:16.222Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\tchibozo\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-11T18:47:32.078Z] ----------------------------------------------------------------------
+[debug] [2023-02-11T18:47:32.084Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tchibozo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-11T18:47:32.086Z] CLI Version:   11.16.0
+[debug] [2023-02-11T18:47:32.086Z] Platform:      win32
+[debug] [2023-02-11T18:47:32.086Z] Node Version:  v18.12.1
+[debug] [2023-02-11T18:47:32.088Z] Time:          Sat Feb 11 2023 19:47:32 GMT+0100 (heure normale d’Afrique de l’Ouest)
+[debug] [2023-02-11T18:47:32.088Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-11T18:47:32.184Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-11T18:47:32.185Z] > authorizing via signed-in user (pacifiqueautoecole1@gmail.com)
+[debug] [2023-02-11T18:47:32.185Z] [iam] checking project pacifique-86242 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-11T18:47:32.188Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions [none]
+[debug] [2023-02-11T18:47:32.188Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions x-goog-quota-user=projects/pacifique-86242
+[debug] [2023-02-11T18:47:32.188Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-11T18:47:39.920Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions 200
+[debug] [2023-02-11T18:47:39.921Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pacifique-86242:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-11T18:47:39.924Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pacifique-86242 [none]
+[debug] [2023-02-11T18:48:09.937Z] Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/pacifique-86242
+[debug] [2023-02-11T18:48:14.954Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\tchibozo\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.
