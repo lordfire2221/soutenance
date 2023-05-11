@@ -49,7 +49,7 @@
                                     <tr *ngFor="let data of datas;">
                                         <td>{{data.num}}</td>
                                         <td>{{data.description}}</td>
-                                        <td><a href="{{data.image}}" target="_blank" rel="noopener noreferrer">Apperçu de l'image</a></td>
+                                        <td><img src="{{data.image}}" alt="" ></td>
                                         <td>{{data.titre}}</td>
                                         <td><button  (click)="modify(data._id)" class="btn-success">Modifier</button></td>
                                     </tr>

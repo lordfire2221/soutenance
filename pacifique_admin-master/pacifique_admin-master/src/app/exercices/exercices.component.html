@@ -46,7 +46,8 @@
                                         <td>{{data.num}}</td>
                                         <td>
                                             <!-- <a href="{{data.image}}" target="_blank" rel="noopener noreferrer">Apperçu de l'image</a> -->
-                                            <app-img-viewer [image]="data.imagePrinc.data"></app-img-viewer>
+                                            <!-- <app-img-viewer [image]="data.imagePrinc.data"></app-img-viewer> -->
+                                            <img src="data.imagePrinc" alt="">
                                         </td>
                                         <td><button  (click)="modify(data._id)" class="btn-success">Modifier</button></td>
                                     </tr>

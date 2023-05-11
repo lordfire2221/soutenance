@@ -7,3 +7,11 @@
 td{
     text-align: center;
 }
+.modal-dialog{
+    max-width: none !important;
+    margin: 0 auto !important;
+    width: 95vw !important;
+}
+::-webkit-scrollbar{
+    width: 0vw;
+}

@@ -25,8 +25,9 @@
                         data-target="#enteteModal">Modifier</button>
                     </div>
                     <div class="card-body" *ngIf="isShow==true">
-                        <app-img-viewer [image]="datas.imagePrinc.data"></app-img-viewer>
+                          <!--<app-img-viewer [image]="datas.imagePrinc.data"></app-img-viewer>-->
                         <!-- <img src="{{datas.image}}" class="card-img-top" alt="image"> -->
+                        <img src="data.imagePrinc" alt="">
                     </div>
                 </div>
                 <div class="card shadow mb-4" *ngFor="let quiz of datas.questions;let idQuizz=index">
@@ -35,7 +36,8 @@
                         <button class="btn btn-primary" type="button" data-toggle="modal"
                         data-target="#sousChapModal" (click)="select(datas,'questions',0,idQuizz)">Modifier</button>
                     </div>
-                          <app-img-viewer [image]="quiz.image.data"></app-img-viewer>
+                       <!--   <app-img-viewer [image]="quiz.image.data"></app-img-viewer> -->
+                       <img src="data.imagePrinc" alt="">
                     <div class="card-body" *ngIf="isShow==true">
                         <h5 class="card-title">{{ quiz.quiz }}</h5>
                         <p class="card-text">
@@ -87,7 +89,8 @@
                                     <div class="col-md-4">
                                         <div style="display:grid;grid-template-columns: 1fr 1fr;cursor: pointer;grid-gap:.3vw">
                                             <div class="card" *ngFor="let image of images" (click)="selectImg(image.image)">
-                                                <app-img-viewer [image]="image.image.data" style="width: 100%;"></app-img-viewer>
+                                            <!--    <app-img-viewer [image]="image.image.data" style="width: 100%;"></app-img-viewer> -->
+                                            <img src="data.imagePrinc" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +114,8 @@
                                     <div class="col-md-10">
                                         <div style="display:grid;grid-template-columns: 1fr 1fr;cursor: pointer;grid-gap:.3vw">
                                             <div class="card" *ngFor="let image of images" (click)="selectImg(image.image)">
-                                                <app-img-viewer [image]="image.image.data"></app-img-viewer>
+                                             <!--    <app-img-viewer [image]="image.image.data"></app-img-viewer> -->
+                                             <img src="data.imagePrinc" alt="">
                                             </div>
                                         </div>
                                     </div>

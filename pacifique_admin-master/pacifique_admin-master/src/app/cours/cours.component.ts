@@ -23,6 +23,7 @@ export class CoursComponent implements OnInit {
       (res:any) => {
         this.datas = res,
         this.isShow  = true
+        console.log(res)
       }
     )
   }

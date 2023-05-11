@@ -53,7 +53,6 @@ export class ModifierCoursComponent implements OnInit {
     this.id = this.authService.getData("id")!
     this.apiService.getOneCoursById(this.id).subscribe(
       (res: any) => {      
-        console.log(res)
         this.datas = res
         this.isShow = true
       }
